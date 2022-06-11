@@ -33,11 +33,7 @@ Needs:
 --- Map complete ~30 minutes
 
 --- Reservation screen
-- Background used a color instead of image - set opacity.
-- Fonts loaded with expo-font hooks
-- Add in assets
+- Background color set, fonts loaded with expo-font hooks, add in assets
+- Decided to make a global stylesheet with variables. Usually i'd use styled components - but figured i'd set this in standard CSS since it's a small project and i can manually avoid conflicts in naming
+- Decided to make the parking receipt it's own component for reusability - maybe a "previous parked locations" list of something could use the same receipt format
 
-
-
-DELETE AFTER DONE
-To do - CSS variables - go back to make sure you're being artsy with this shit. DELETE THIS AFTER

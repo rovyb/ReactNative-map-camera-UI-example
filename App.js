@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { useFonts } from "@use-expo/font";
-import {Map} from './src/Map/Map'
-import {ReservationScreen} from './src/ReservationScreen/ReservationScreen'
+import { useFonts } from '@use-expo/font';
+import {Map} from './src/components/Map/Map'
+import {ReservationScreen} from './src/components/ReservationScreen/ReservationScreen'
 
 
 const address = '23 Landview Drive, Dix Hills, Ny' 
