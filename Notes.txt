@@ -1,0 +1,43 @@
+Project scoping:
+
+Needs: 
+1. Map w/ Expo Mapview
+  - Address hardcoded into constant passed in props
+  - Geocode the address into lat long (async) - expo location solves this
+  - Set lat long as region in state
+  - Use region state for mapView to move map
+
+2. Data needs:
+  - Name - Fells Wargo's Parking lot
+  - Address - Any
+  - Spot #
+  - Start Date
+  - End Date
+  - Cost
+  - User Name
+  - User profile image
+  - User relationship?
+
+
+------ Working Notes
+
+--- Map Start
+- Started by getting the map on the screen w/ expo maps. Started with this as I wanted to build from the back to the front for simplicity.
+- Recognized mapview requires lat/long, so wanted to geocode a standard address to set the region
+- Location.geocodeAsync is async so putting the entire function in a useEffect
+- Setting state in the function in useEffect so the response isn't a promise but is instead the array
+- Rendering the map gives us an undefined state on first render, adding a conditional to check for coords state to have info to render map or render loading
+- Map is rendering to the correct location after setting a region state and using that as the mapView region
+- After looking at figma decided to use a relative/absolute positioning approach to overlay screens
+
+--- Map complete ~30 minutes
+
+--- Reservation screen
+- Background used a color instead of image - set opacity.
+- Fonts loaded with expo-font hooks
+- Add in assets
+
+
+
+DELETE AFTER DONE
+To do - CSS variables - go back to make sure you're being artsy with this shit. DELETE THIS AFTER
