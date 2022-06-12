@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from '@use-expo/font';
 import {Map} from './src/components/Map/Map'
@@ -7,7 +6,10 @@ import {ReservationScreen} from './src/components/ReservationScreen/ReservationS
 
 const address = '23 Landview Drive, Dix Hills, Ny' 
 
-const customFonts = {Rubik: require('./assets/fonts/Rubik.ttf')}
+const customFonts = {
+  Rubik400: require('./assets/fonts/Rubik400.ttf'), 
+  Rubik900: require('./assets/fonts/Rubik900.ttf')
+}
 
 export default function App() {
   const [loaded] = useFonts(customFonts);
@@ -16,7 +18,7 @@ export default function App() {
   }
 
   return (
-    <View style={{ ...styles.container, fontFamily: 'Rubik'}}>
+    <View style={styles.container}>
       <Map address={address}/>
       <ReservationScreen />
     </View>
@@ -26,8 +28,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
     position: 'relative',
   },
 });

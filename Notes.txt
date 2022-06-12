@@ -18,6 +18,10 @@ Needs:
   - User profile image
   - User relationship?
 
+3. Camera needs:
+- Expo camera, get camera view and take pictures - maybe flip camera?
+- display image in a new view
+
 
 ------ Working Notes
 
@@ -37,3 +41,20 @@ Needs:
 - Decided to make a global stylesheet with variables. Usually i'd use styled components - but figured i'd set this in standard CSS since it's a small project and i can manually avoid conflicts in naming
 - Decided to make the parking receipt it's own component for reusability - maybe a "previous parked locations" list of something could use the same receipt format
 
+
+--- Camera screen
+- Began building camera fully into Reservation screen and once I got the camera functioning pulled it into a reusable camera component
+- Set state to handle permissions and check if the camera is open. Would go on to make an event handler connected to the button to 1. Make an async call for permissions and 2. set both states if permissions were granted
+- Conditionally rendered either the camera component i made or the reservation screen depending on if camera was open, passed props of the useState for setting the camera to be open
+--- Camera component
+- Created two buttons - one to flip camera and two to take picture
+- set up event handlers - take picture is an async so i set the image in the event handler to avoid the promise, flip handler to flip the camera type
+- once photo was taken i set a state of previewVisible that conditionally rendered a preview image with a return button to close
+- added return button by setting state to false and a close camera button that uses the cameraOpen prop sent from reservation screen. 
+
+--- Camera complete 3 hours
+
+Other notes:
+- Yellow background color opacity looks low to me at .75 compared to figma, but kept it for consistency
+- Button border radius 24px looks low - not as rounded as figma appears
+- I regretted my decision to not use styled components - found too many areas of conflicting selectors

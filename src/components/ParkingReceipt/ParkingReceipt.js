@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     height: 475,
     backgroundColor: '#fff',
     borderRadius: globalStyles.radiusContainer,
+    marginBottom: globalStyles.spacingMD
 
   },
 
