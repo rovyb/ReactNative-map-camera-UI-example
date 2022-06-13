@@ -7,7 +7,9 @@ import {ReservationScreen} from './src/components/ReservationScreen/ReservationS
 const address = '23 Landview Drive, Dix Hills, Ny' 
 
 const customFonts = {
-  Rubik400: require('./assets/fonts/Rubik400.ttf'), 
+  Rubik400: require('./assets/fonts/Rubik400.ttf'),
+  Rubik500: require('./assets/fonts/Rubik500.ttf'),
+  Rubik700: require('./assets/fonts/Rubik700.ttf'), 
   Rubik900: require('./assets/fonts/Rubik900.ttf')
 }
 

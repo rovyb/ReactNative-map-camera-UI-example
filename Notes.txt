@@ -41,7 +41,6 @@ Needs:
 - Decided to make a global stylesheet with variables. Usually i'd use styled components - but figured i'd set this in standard CSS since it's a small project and i can manually avoid conflicts in naming
 - Decided to make the parking receipt it's own component for reusability - maybe a "previous parked locations" list of something could use the same receipt format
 
-
 --- Camera screen
 - Began building camera fully into Reservation screen and once I got the camera functioning pulled it into a reusable camera component
 - Set state to handle permissions and check if the camera is open. Would go on to make an event handler connected to the button to 1. Make an async call for permissions and 2. set both states if permissions were granted
@@ -57,4 +56,6 @@ Needs:
 Other notes:
 - Yellow background color opacity looks low to me at .75 compared to figma, but kept it for consistency
 - Button border radius 24px looks low - not as rounded as figma appears
-- I regretted my decision to not use styled components - found too many areas of conflicting selectors
+- I regretted my decision to not use styled components - found too many areas of conflicting selectors, couldn't use pseudo classes for things like the ticket indents etc..
+- Lot address (15714 Melrose) shows a font of gtamerica under rubik, I wasn't sure what to do here so wen't with Rubik400 like the subheader on the res page 
+- Dashed borders are still broken on RN natively so making it a solid line - there are workarounds, but i figured I could skip that for this specific assignment 

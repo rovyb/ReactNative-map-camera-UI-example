@@ -13,6 +13,29 @@ import { ParkingReceipt } from "../ParkingReceipt/ParkingReceipt";
 import {Camera} from "expo-camera";
 import {CameraComponent} from '../Camera/Camera'
 
+
+const lotInfo = {
+  lotName: 'Fells Wargo\'s Parking Lot',
+  lotAddress: '15714 Melrose Ave, Beveryly Hills, CA 90201',
+  spot: 'Spot 21',
+}
+
+const reservationInfo = {
+  startDate: 'Feb 20',
+  startYearTime: '2019 (12:00 AM)',
+  endDate: '',
+  endYear: '',
+  endTime: '',
+  price: ''
+
+}
+
+const userInfo = {
+  profilePic: require('../../../assets/images/profile-picture.jpg'),
+  name: 'Annie W.',
+  relationship: 'Owner'
+}
+
 const buttonIcon = require("../../../assets/images/icon-camera.png");
 const buttonText = "Identify your vehicle";
 
@@ -47,7 +70,7 @@ export const ReservationScreen = (props) => {
           <Text style={styles.subheader}>
             Your reservation details are below.
           </Text>
-          <ParkingReceipt />
+          <ParkingReceipt lotInfo={lotInfo} reservationInfo={reservationInfo} userInfo={userInfo}/>
           <Button icon={buttonIcon} text={buttonText} onPress={openCamera} />
         </View>
       )}
