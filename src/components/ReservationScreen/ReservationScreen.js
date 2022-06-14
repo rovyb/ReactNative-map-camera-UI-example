@@ -6,7 +6,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import * as globalStyles from "../../../globalStyles";
 import { Button } from "../Button/Button";
 import { ParkingReceipt } from "../ParkingReceipt/ParkingReceipt";
@@ -16,24 +16,23 @@ import {CameraComponent} from '../Camera/Camera'
 
 const lotInfo = {
   lotName: 'Fells Wargo\'s Parking Lot',
-  lotAddress: '15714 Melrose Ave, Beveryly Hills, CA 90201',
+  lotAddress: '23 Landview Drive, Dix Hills NY',
   spot: 'Spot 21',
 }
 
 const reservationInfo = {
   startDate: 'Feb 20',
   startYearTime: '2019 (12:00 AM)',
-  endDate: '',
-  endYear: '',
-  endTime: '',
-  price: ''
+  endDate: 'May 20',
+  endYYearTime: '2019 (12:00 AM)',
+  price: '$272.95'
 
 }
 
 const userInfo = {
   profilePic: require('../../../assets/images/profile-picture.jpg'),
   name: 'Annie W.',
-  relationship: 'Owner'
+  title: 'Owner'
 }
 
 const buttonIcon = require("../../../assets/images/icon-camera.png");
@@ -53,6 +52,11 @@ export const ReservationScreen = (props) => {
       console.log("Access denied");
     }
   };
+
+  useEffect(() => {
+    props.setAddress(lotInfo.lotAddress)
+    }
+  , [])
 
   return (
     <View>

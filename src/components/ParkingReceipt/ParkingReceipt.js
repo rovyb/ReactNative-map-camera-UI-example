@@ -17,7 +17,7 @@ export const ParkingReceipt = (props) => {
       </View>
       <UserActions icon={require('../../../assets/images/icon-help.png')} text="View parking instructions" />
       <UserActions icon={require('../../../assets/images/icon-clock.png')} text="Purchase additional months" />
-      <UserActions icon={require('../../../assets/images/icon-receipt.png')} text="View receipt for $272.95" />
+      <UserActions icon={require('../../../assets/images/icon-receipt.png')} text={"View receipt for " + props.reservationInfo.price }/>
       <UserCard props={props.userInfo}/>
     </View>
   )

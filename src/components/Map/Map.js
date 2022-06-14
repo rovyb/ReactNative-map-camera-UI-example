@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 
 export const Map = (props) => {
   const [coords, setCoords] = useState()
+
+  console.log(props)
   
   useEffect(() => {
     const location = async () => {
@@ -12,7 +14,7 @@ export const Map = (props) => {
       setCoords(response[0])
     }
     const getCoordinates = location(props.address)
-  }, [])
+  }, [props.address])
 
   const mapRegion =  {
     latitude: coords?.latitude,
@@ -23,12 +25,13 @@ export const Map = (props) => {
 
 
   return (
-    coords ? <MapView style={styles.map} region={mapRegion}/> : <View><Text>Loading</Text></View>
+    coords ? <MapView style={styles.map} region={mapRegion}/> : <View style={{position: 'absolute'}}><Text>Loading</Text></View>
   )
 }
 
 const styles = StyleSheet.create({
     map: {
+      zIndex: 0,
       position: 'absolute',
       top: 0,
       left: 0,

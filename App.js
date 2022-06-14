@@ -1,10 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from '@use-expo/font';
-import {Map} from './src/components/Map/Map'
+import {useState} from 'react';
+import { Map } from './src/components/Map/Map';
 import {ReservationScreen} from './src/components/ReservationScreen/ReservationScreen'
-
-
-const address = '23 Landview Drive, Dix Hills, Ny' 
 
 const customFonts = {
   Rubik400: require('./assets/fonts/Rubik400.ttf'),
@@ -13,7 +11,9 @@ const customFonts = {
   Rubik900: require('./assets/fonts/Rubik900.ttf')
 }
 
+
 export default function App() {
+  const [address, setAddress] = useState()
   const [loaded] = useFonts(customFonts);
   if (!loaded) {
     return null;
@@ -21,8 +21,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Map address={address}/>
-      <ReservationScreen />
+      {address ? <Map address={address} /> : <View></View>}
+      <ReservationScreen setAddress={setAddress} />
     </View>
   );
 }

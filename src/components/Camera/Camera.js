@@ -19,7 +19,6 @@ export const CameraComponent = (props) => {
 
   const closeCamera = () => {
     props.setCameraOpen(false)
-    console.log(props.cameraOpen)
   }
 
   const flip = () => {

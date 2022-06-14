@@ -1,3 +1,13 @@
+Initial notes:
+- All editable props are in the ReservationScreen.js file. If you edit the address, the map should move once you have street, city state
+- dashed borders in react native aren't as simple as 'dashed' for the border - skipped this as i would need to create a workaround
+- Could not create the half circle indents on tickets by means of cutting out the div (pseudo elements don't work natively). Here is how I would do it in react.js:
+      --- :before, :after {content: ''} - absolutely position w/ border radius 50% in needed spot
+      --- this could be done using SVG, other methods, but i thought for sake of time it was fair to leave this out
+- A couple of things look a little different than the figma - but i used the figma settings, background yellow opacity looks off, button border radius looks a little low etc
+
+-----
+
 Project scoping:
 
 Needs: 
@@ -34,28 +44,25 @@ Needs:
 - Map is rendering to the correct location after setting a region state and using that as the mapView region
 - After looking at figma decided to use a relative/absolute positioning approach to overlay screens
 
---- Map complete ~30 minutes
+--- Map complete 45 minutes
 
 --- Reservation screen
 - Background color set, fonts loaded with expo-font hooks, add in assets
 - Decided to make a global stylesheet with variables. Usually i'd use styled components - but figured i'd set this in standard CSS since it's a small project and i can manually avoid conflicts in naming
 - Decided to make the parking receipt it's own component for reusability - maybe a "previous parked locations" list of something could use the same receipt format
-
+- Grouped the sections into LotInfo, DateInfo, User Actions and User Profile
+- Lots of css! I tried to use globals for most things, ad libbing where needed. Font sizes were a bit all over so I manually handled mostly. 
 --- Camera screen
 - Began building camera fully into Reservation screen and once I got the camera functioning pulled it into a reusable camera component
 - Set state to handle permissions and check if the camera is open. Would go on to make an event handler connected to the button to 1. Make an async call for permissions and 2. set both states if permissions were granted
 - Conditionally rendered either the camera component i made or the reservation screen depending on if camera was open, passed props of the useState for setting the camera to be open
 --- Camera component
-- Created two buttons - one to flip camera and two to take picture
+- Created two buttons - one to flip camera and two to take picture - works only on device not sim
 - set up event handlers - take picture is an async so i set the image in the event handler to avoid the promise, flip handler to flip the camera type
 - once photo was taken i set a state of previewVisible that conditionally rendered a preview image with a return button to close
 - added return button by setting state to false and a close camera button that uses the cameraOpen prop sent from reservation screen. 
 
---- Camera complete 3 hours
+--- Reserve/Camera complete 4 hours
 
 Other notes:
-- Yellow background color opacity looks low to me at .75 compared to figma, but kept it for consistency
-- Button border radius 24px looks low - not as rounded as figma appears
-- I regretted my decision to not use styled components - found too many areas of conflicting selectors, couldn't use pseudo classes for things like the ticket indents etc..
-- Lot address (15714 Melrose) shows a font of gtamerica under rubik, I wasn't sure what to do here so wen't with Rubik400 like the subheader on the res page 
-- Dashed borders are still broken on RN natively so making it a solid line - there are workarounds, but i figured I could skip that for this specific assignment 
+- I regretted my decision to not use styled components/stitches - found too many areas of conflicting selectors, couldn't use pseudo classes for things like the ticket indents etc..
